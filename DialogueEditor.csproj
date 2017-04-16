@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24FC5947-2D18-4FAC-9783-8F6184C489E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DialogueEditor</RootNamespace>
+    <AssemblyName>DialogueEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.9.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>graphics\Icons\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F95E301C07C7C506D44C9539239DCAB46C8FE169</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DialogueEditor_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="i00BindingList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\i00SpellCheck\i00BindingList.exe</HintPath>
+    </Reference>
+    <Reference Include="i00SpellCheck, Version=1.0.0.40990, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\i00SpellCheck\i00SpellCheck.exe</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\JSON.NET\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base64.cs" />
+    <Compile Include="Choice.cs" />
+    <Compile Include="ChoiceEditPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChoiceEditPanel.Designer.cs">
+      <DependentUpon>ChoiceEditPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsListPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsListPanel.Designer.cs">
+      <DependentUpon>ControlsListPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data.cs" />
+    <Compile Include="DrawingControl.cs" />
+    <Compile Include="ListNodesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListNodesPanel.Designer.cs">
+      <DependentUpon>ListNodesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainEditor.Designer.cs">
+      <DependentUpon>mainEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Node.cs" />
+    <Compile Include="NodeEditPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NodeEditPanel.Designer.cs">
+      <DependentUpon>NodeEditPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodesRelativeToRootPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NodesRelativeToRootPanel.Designer.cs">
+      <DependentUpon>NodesRelativeToRootPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchForNodesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchForNodesPanel.Designer.cs">
+      <DependentUpon>SearchForNodesPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChoiceEditPanel.resx">
+      <DependentUpon>ChoiceEditPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsListPanel.resx">
+      <DependentUpon>ControlsListPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListNodesPanel.resx">
+      <DependentUpon>ListNodesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainEditor.en-GB.resx">
+      <DependentUpon>mainEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainEditor.resx">
+      <DependentUpon>mainEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainEditor.tr.resx">
+      <DependentUpon>mainEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainEditor.yo-NG.resx">
+      <DependentUpon>mainEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodeEditPanel.resx">
+      <DependentUpon>NodeEditPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodesRelativeToRootPanel.resx">
+      <DependentUpon>NodesRelativeToRootPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SearchForNodesPanel.resx">
+      <DependentUpon>SearchForNodesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="def.def" />
+    <None Include="DialogueEditor_TemporaryKey.pfx" />
+    <None Include="dic.dic" />
+    <None Include="lib\i00SpellCheck\def.def" />
+    <None Include="lib\i00SpellCheck\dic.dic" />
+    <None Include="lib\i00SpellCheck\syn.syn" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="syn.syn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="graphics\Buttons\AddButton.png" />
+    <Content Include="graphics\Buttons\AddButton.svg" />
+    <Content Include="graphics\Buttons\AddChoiceButton.png" />
+    <Content Include="graphics\Buttons\AddChoiceButton.svg" />
+    <Content Include="graphics\Buttons\AddChoiceButton2.png" />
+    <Content Include="graphics\Buttons\AddChoiceButton2.svg" />
+    <Content Include="graphics\Buttons\DeleteButton1.png" />
+    <Content Include="graphics\Buttons\DeleteButton1.svg" />
+    <Content Include="graphics\Buttons\DeleteButton2.png" />
+    <Content Include="graphics\Buttons\DeleteButton2.svg" />
+    <Content Include="graphics\Buttons\MakeNodeRootButton.svg" />
+    <Content Include="graphics\Buttons\MakeNodeRootButton1.png" />
+    <Content Include="graphics\Buttons\MaximiseButton1.png" />
+    <Content Include="graphics\Buttons\MaximiseButton1.svg" />
+    <Content Include="graphics\Buttons\MaximiseButton2.png" />
+    <Content Include="graphics\Buttons\MaximiseButton2.svg" />
+    <Content Include="graphics\Buttons\MinimiseButton1.png" />
+    <Content Include="graphics\Buttons\MinimiseButton1.svg" />
+    <Content Include="graphics\Buttons\MinimiseButton2.png" />
+    <Content Include="graphics\Buttons\MinimiseButton2.svg" />
+    <Content Include="graphics\Buttons\NewTargetNodeButton.png" />
+    <Content Include="graphics\Buttons\NewTargetNodeButton.svg" />
+    <Content Include="graphics\Buttons\NewTargetRootNodeButton.png" />
+    <Content Include="graphics\Buttons\NewTargetRootNodeButton.svg" />
+    <Content Include="graphics\Buttons\SetTargetToExistingNodeButton.png" />
+    <Content Include="graphics\Buttons\SetTargetToExistingNodeButton.svg" />
+    <Content Include="graphics\Buttons\text3765.png" />
+    <Content Include="graphics\Icons\AppIcon.ico" />
+    <Content Include="lib\i00SpellCheck\def\a ball.png" />
+    <Content Include="lib\i00SpellCheck\def\a body part.png" />
+    <Content Include="lib\i00SpellCheck\def\a bone.png" />
+    <Content Include="lib\i00SpellCheck\def\a golf ball.png" />
+    <Content Include="lib\i00SpellCheck\def\a hole.png" />
+    <Content Include="lib\i00SpellCheck\def\a horse.png" />
+    <Content Include="lib\i00SpellCheck\def\a liquid.png" />
+    <Content Include="lib\i00SpellCheck\def\a metal.png" />
+    <Content Include="lib\i00SpellCheck\def\a musical instrument.png" />
+    <Content Include="lib\i00SpellCheck\def\a person.png" />
+    <Content Include="lib\i00SpellCheck\def\a place.png" />
+    <Content Include="lib\i00SpellCheck\def\a shoe.png" />
+    <Content Include="lib\i00SpellCheck\def\a string instrument.png" />
+    <Content Include="lib\i00SpellCheck\def\a substance.png" />
+    <Content Include="lib\i00SpellCheck\def\a target.png" />
+    <Content Include="lib\i00SpellCheck\def\accounting.png" />
+    <Content Include="lib\i00SpellCheck\def\alcohol.png" />
+    <Content Include="lib\i00SpellCheck\def\american football.png" />
+    <Content Include="lib\i00SpellCheck\def\an animal.png" />
+    <Content Include="lib\i00SpellCheck\def\an image.png" />
+    <Content Include="lib\i00SpellCheck\def\an organ.png" />
+    <Content Include="lib\i00SpellCheck\def\ancient greece.png" />
+    <Content Include="lib\i00SpellCheck\def\and coins in particular.png" />
+    <Content Include="lib\i00SpellCheck\def\animals.png" />
+    <Content Include="lib\i00SpellCheck\def\architecture.png" />
+    <Content Include="lib\i00SpellCheck\def\art.png" />
+    <Content Include="lib\i00SpellCheck\def\as a bomb.png" />
+    <Content Include="lib\i00SpellCheck\def\as a judge.png" />
+    <Content Include="lib\i00SpellCheck\def\as a piece of machinery.png" />
+    <Content Include="lib\i00SpellCheck\def\as in a meeting.png" />
+    <Content Include="lib\i00SpellCheck\def\as on a ship.png" />
+    <Content Include="lib\i00SpellCheck\def\as property.png" />
+    <Content Include="lib\i00SpellCheck\def\as water.png" />
+    <Content Include="lib\i00SpellCheck\def\astrology.png" />
+    <Content Include="lib\i00SpellCheck\def\baseball.png" />
+    <Content Include="lib\i00SpellCheck\def\basketball.png" />
+    <Content Include="lib\i00SpellCheck\def\bible.png" />
+    <Content Include="lib\i00SpellCheck\def\biology.png" />
+    <Content Include="lib\i00SpellCheck\def\board games.png" />
+    <Content Include="lib\i00SpellCheck\def\born in america.png" />
+    <Content Include="lib\i00SpellCheck\def\born in austria.png" />
+    <Content Include="lib\i00SpellCheck\def\born in canada.png" />
+    <Content Include="lib\i00SpellCheck\def\born in england.png" />
+    <Content Include="lib\i00SpellCheck\def\born in france.png" />
+    <Content Include="lib\i00SpellCheck\def\born in germany.png" />
+    <Content Include="lib\i00SpellCheck\def\born in hungary.png" />
+    <Content Include="lib\i00SpellCheck\def\born in ireland.png" />
+    <Content Include="lib\i00SpellCheck\def\born in new zealand.png" />
+    <Content Include="lib\i00SpellCheck\def\born in poland.png" />
+    <Content Include="lib\i00SpellCheck\def\born in russia.png" />
+    <Content Include="lib\i00SpellCheck\def\born in scotland.png" />
+    <Content Include="lib\i00SpellCheck\def\born in the united states.png" />
+    <Content Include="lib\i00SpellCheck\def\botany.png" />
+    <Content Include="lib\i00SpellCheck\def\boxing.png" />
+    <Content Include="lib\i00SpellCheck\def\bridge.png" />
+    <Content Include="lib\i00SpellCheck\def\british.png" />
+    <Content Include="lib\i00SpellCheck\def\business.png" />
+    <Content Include="lib\i00SpellCheck\def\card games.png" />
+    <Content Include="lib\i00SpellCheck\def\cattle.png" />
+    <Content Include="lib\i00SpellCheck\def\chemistry.png" />
+    <Content Include="lib\i00SpellCheck\def\chess.png" />
+    <Content Include="lib\i00SpellCheck\def\christian theology.png" />
+    <Content Include="lib\i00SpellCheck\def\christianity.png" />
+    <Content Include="lib\i00SpellCheck\def\civil law.png" />
+    <Content Include="lib\i00SpellCheck\def\clothes.png" />
+    <Content Include="lib\i00SpellCheck\def\color.png" />
+    <Content Include="lib\i00SpellCheck\def\computer science.png" />
+    <Content Include="lib\i00SpellCheck\def\computing.png" />
+    <Content Include="lib\i00SpellCheck\def\cricket.png" />
+    <Content Include="lib\i00SpellCheck\def\criminal law.png" />
+    <Content Include="lib\i00SpellCheck\def\data.png" />
+    <Content Include="lib\i00SpellCheck\def\dna or rna.png" />
+    <Content Include="lib\i00SpellCheck\def\documents.png" />
+    <Content Include="lib\i00SpellCheck\def\eggs.png" />
+    <Content Include="lib\i00SpellCheck\def\electronic data.png" />
+    <Content Include="lib\i00SpellCheck\def\electronics.png" />
+    <Content Include="lib\i00SpellCheck\def\especially a bacterium.png" />
+    <Content Include="lib\i00SpellCheck\def\especially a molar tooth.png" />
+    <Content Include="lib\i00SpellCheck\def\especially a piano duet.png" />
+    <Content Include="lib\i00SpellCheck\def\especially alcohol.png" />
+    <Content Include="lib\i00SpellCheck\def\especially blood.png" />
+    <Content Include="lib\i00SpellCheck\def\especially by nuclear weapons.png" />
+    <Content Include="lib\i00SpellCheck\def\especially cattle.png" />
+    <Content Include="lib\i00SpellCheck\def\especially dinner.png" />
+    <Content Include="lib\i00SpellCheck\def\especially in a private home.png" />
+    <Content Include="lib\i00SpellCheck\def\especially in religion.png" />
+    <Content Include="lib\i00SpellCheck\def\especially language.png" />
+    <Content Include="lib\i00SpellCheck\def\especially money.png" />
+    <Content Include="lib\i00SpellCheck\def\especially of promises or contracts.png" />
+    <Content Include="lib\i00SpellCheck\def\especially of the bible.png" />
+    <Content Include="lib\i00SpellCheck\def\especially of wood.png" />
+    <Content Include="lib\i00SpellCheck\def\especially water.png" />
+    <Content Include="lib\i00SpellCheck\def\fencing.png" />
+    <Content Include="lib\i00SpellCheck\def\film.png" />
+    <Content Include="lib\i00SpellCheck\def\food.png" />
+    <Content Include="lib\i00SpellCheck\def\football.png" />
+    <Content Include="lib\i00SpellCheck\def\game.png" />
+    <Content Include="lib\i00SpellCheck\def\games.png" />
+    <Content Include="lib\i00SpellCheck\def\genetics.png" />
+    <Content Include="lib\i00SpellCheck\def\golf.png" />
+    <Content Include="lib\i00SpellCheck\def\great britain.png" />
+    <Content Include="lib\i00SpellCheck\def\greek mythology.png" />
+    <Content Include="lib\i00SpellCheck\def\heraldry.png" />
+    <Content Include="lib\i00SpellCheck\def\hinduism and buddhism.png" />
+    <Content Include="lib\i00SpellCheck\def\hinduism.png" />
+    <Content Include="lib\i00SpellCheck\def\horseshoes.png" />
+    <Content Include="lib\i00SpellCheck\def\ice hockey.png" />
+    <Content Include="lib\i00SpellCheck\def\images or sounds.png" />
+    <Content Include="lib\i00SpellCheck\def\in india.png" />
+    <Content Include="lib\i00SpellCheck\def\independent of sex differences.png" />
+    <Content Include="lib\i00SpellCheck\def\information.png" />
+    <Content Include="lib\i00SpellCheck\def\islam.png" />
+    <Content Include="lib\i00SpellCheck\def\jewish folklore.png" />
+    <Content Include="lib\i00SpellCheck\def\judaism.png" />
+    <Content Include="lib\i00SpellCheck\def\law.png" />
+    <Content Include="lib\i00SpellCheck\def\light or sound.png" />
+    <Content Include="lib\i00SpellCheck\def\literary.png" />
+    <Content Include="lib\i00SpellCheck\def\mathematics.png" />
+    <Content Include="lib\i00SpellCheck\def\meat.png" />
+    <Content Include="lib\i00SpellCheck\def\mechanics.png" />
+    <Content Include="lib\i00SpellCheck\def\medicine.png" />
+    <Content Include="lib\i00SpellCheck\def\metals.png" />
+    <Content Include="lib\i00SpellCheck\def\microbiology.png" />
+    <Content Include="lib\i00SpellCheck\def\military personnel.png" />
+    <Content Include="lib\i00SpellCheck\def\military.png" />
+    <Content Include="lib\i00SpellCheck\def\money.png" />
+    <Content Include="lib\i00SpellCheck\def\music.png" />
+    <Content Include="lib\i00SpellCheck\def\nautical.png" />
+    <Content Include="lib\i00SpellCheck\def\neuroscience.png" />
+    <Content Include="lib\i00SpellCheck\def\new testament.png" />
+    <Content Include="lib\i00SpellCheck\def\norse mythology.png" />
+    <Content Include="lib\i00SpellCheck\def\of a baseball.png" />
+    <Content Include="lib\i00SpellCheck\def\of a bed.png" />
+    <Content Include="lib\i00SpellCheck\def\of a liquid.png" />
+    <Content Include="lib\i00SpellCheck\def\of a musical instrument.png" />
+    <Content Include="lib\i00SpellCheck\def\of a nuclear reaction.png" />
+    <Content Include="lib\i00SpellCheck\def\of a person.png" />
+    <Content Include="lib\i00SpellCheck\def\of a sailing vessel.png" />
+    <Content Include="lib\i00SpellCheck\def\of a ship or plane.png" />
+    <Content Include="lib\i00SpellCheck\def\of a specimen for study under a microscope.png" />
+    <Content Include="lib\i00SpellCheck\def\of a substance.png" />
+    <Content Include="lib\i00SpellCheck\def\of an organ or body part.png" />
+    <Content Include="lib\i00SpellCheck\def\of animals.png" />
+    <Content Include="lib\i00SpellCheck\def\of birds.png" />
+    <Content Include="lib\i00SpellCheck\def\of champagne.png" />
+    <Content Include="lib\i00SpellCheck\def\of clothing.png" />
+    <Content Include="lib\i00SpellCheck\def\of coffee.png" />
+    <Content Include="lib\i00SpellCheck\def\of color.png" />
+    <Content Include="lib\i00SpellCheck\def\of drugs.png" />
+    <Content Include="lib\i00SpellCheck\def\of flora or fauna.png" />
+    <Content Include="lib\i00SpellCheck\def\of fluids.png" />
+    <Content Include="lib\i00SpellCheck\def\of hair or clothing.png" />
+    <Content Include="lib\i00SpellCheck\def\of language.png" />
+    <Content Include="lib\i00SpellCheck\def\of light.png" />
+    <Content Include="lib\i00SpellCheck\def\of limbs and feet.png" />
+    <Content Include="lib\i00SpellCheck\def\of meat.png" />
+    <Content Include="lib\i00SpellCheck\def\of motor vehicles.png" />
+    <Content Include="lib\i00SpellCheck\def\of pages of a book.png" />
+    <Content Include="lib\i00SpellCheck\def\of persons.png" />
+    <Content Include="lib\i00SpellCheck\def\of plant or animal.png" />
+    <Content Include="lib\i00SpellCheck\def\of plants and shrubs.png" />
+    <Content Include="lib\i00SpellCheck\def\of plants.png" />
+    <Content Include="lib\i00SpellCheck\def\of real estate.png" />
+    <Content Include="lib\i00SpellCheck\def\of securities.png" />
+    <Content Include="lib\i00SpellCheck\def\of sleep.png" />
+    <Content Include="lib\i00SpellCheck\def\of soil.png" />
+    <Content Include="lib\i00SpellCheck\def\of sound.png" />
+    <Content Include="lib\i00SpellCheck\def\of sounds.png" />
+    <Content Include="lib\i00SpellCheck\def\of speech sounds.png" />
+    <Content Include="lib\i00SpellCheck\def\of speech.png" />
+    <Content Include="lib\i00SpellCheck\def\of the moon.png" />
+    <Content Include="lib\i00SpellCheck\def\of time.png" />
+    <Content Include="lib\i00SpellCheck\def\of weapons.png" />
+    <Content Include="lib\i00SpellCheck\def\of weather or climate.png" />
+    <Content Include="lib\i00SpellCheck\def\of weather.png" />
+    <Content Include="lib\i00SpellCheck\def\of winds.png" />
+    <Content Include="lib\i00SpellCheck\def\of wine.png" />
+    <Content Include="lib\i00SpellCheck\def\of wood.png" />
+    <Content Include="lib\i00SpellCheck\def\old testament.png" />
+    <Content Include="lib\i00SpellCheck\def\or animal.png" />
+    <Content Include="lib\i00SpellCheck\def\or any sound resembling this.png" />
+    <Content Include="lib\i00SpellCheck\def\or other liquid.png" />
+    <Content Include="lib\i00SpellCheck\def\or sexual relations with.png" />
+    <Content Include="lib\i00SpellCheck\def\people.png" />
+    <Content Include="lib\i00SpellCheck\def\person or animal.png" />
+    <Content Include="lib\i00SpellCheck\def\photography.png" />
+    <Content Include="lib\i00SpellCheck\def\physics and chemistry.png" />
+    <Content Include="lib\i00SpellCheck\def\physics.png" />
+    <Content Include="lib\i00SpellCheck\def\plants and animals.png" />
+    <Content Include="lib\i00SpellCheck\def\printing.png" />
+    <Content Include="lib\i00SpellCheck\def\property.png" />
+    <Content Include="lib\i00SpellCheck\def\radiology.png" />
+    <Content Include="lib\i00SpellCheck\def\religion.png" />
+    <Content Include="lib\i00SpellCheck\def\roman catholic church.png" />
+    <Content Include="lib\i00SpellCheck\def\roman mythology.png" />
+    <Content Include="lib\i00SpellCheck\def\rugby.png" />
+    <Content Include="lib\i00SpellCheck\def\sound.png" />
+    <Content Include="lib\i00SpellCheck\def\spoken or written.png" />
+    <Content Include="lib\i00SpellCheck\def\sport.png" />
+    <Content Include="lib\i00SpellCheck\def\sports.png" />
+    <Content Include="lib\i00SpellCheck\def\statistics.png" />
+    <Content Include="lib\i00SpellCheck\def\substances.png" />
+    <Content Include="lib\i00SpellCheck\def\surgery.png" />
+    <Content Include="lib\i00SpellCheck\def\technology.png" />
+    <Content Include="lib\i00SpellCheck\def\tennis.png" />
+    <Content Include="lib\i00SpellCheck\def\the lips.png" />
+    <Content Include="lib\i00SpellCheck\def\united kingdom.png" />
+    <Content Include="lib\i00SpellCheck\def\used especially of machinery.png" />
+    <Content Include="lib\i00SpellCheck\def\used especially of persons.png" />
+    <Content Include="lib\i00SpellCheck\def\used of color.png" />
+    <Content Include="lib\i00SpellCheck\def\used of grass or vegetation.png" />
+    <Content Include="lib\i00SpellCheck\def\used of metals.png" />
+    <Content Include="lib\i00SpellCheck\def\used of persons or behaviors.png" />
+    <Content Include="lib\i00SpellCheck\def\used of persons or the military.png" />
+    <Content Include="lib\i00SpellCheck\def\used of persons.png" />
+    <Content Include="lib\i00SpellCheck\def\used of soil.png" />
+    <Content Include="lib\i00SpellCheck\def\used of the military.png" />
+    <Content Include="lib\i00SpellCheck\def\used of timepieces.png" />
+    <Content Include="lib\i00SpellCheck\def\usually a bell.png" />
+    <Content Include="lib\i00SpellCheck\def\usually alcoholic.png" />
+    <Content Include="lib\i00SpellCheck\def\usually cylindrical.png" />
+    <Content Include="lib\i00SpellCheck\def\usually in water.png" />
+    <Content Include="lib\i00SpellCheck\def\usually made of wood.png" />
+    <Content Include="lib\i00SpellCheck\def\usually metal.png" />
+    <Content Include="lib\i00SpellCheck\def\usually red.png" />
+    <Content Include="lib\i00SpellCheck\def\usually white.png" />
+    <Content Include="lib\i00SpellCheck\def\usually written.png" />
+    <Content Include="lib\i00SpellCheck\def\water.png" />
+    <Content Include="lib\i00SpellCheck\def\weapons.png" />
+    <Content Include="lib\i00SpellCheck\def\wood or metal.png" />
+    <Content Include="lib\i00SpellCheck\def\wood.png" />
+    <Content Include="lib\i00SpellCheck\i00BindingList.exe" />
+    <Content Include="lib\i00SpellCheck\i00BindingList.pdb" />
+    <Content Include="lib\i00SpellCheck\i00SpellCheck.exe" />
+    <Content Include="lib\i00SpellCheck\i00SpellCheck.pdb" />
+    <Content Include="lib\JSON.NET\Newtonsoft.Json.dll" />
+    <Content Include="lib\JSON.NET\Newtonsoft.Json.pdb" />
+    <Content Include="lib\JSON.NET\Newtonsoft.Json.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
