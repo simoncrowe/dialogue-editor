@@ -73,14 +73,6 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i00BindingList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\i00SpellCheck\i00BindingList.exe</HintPath>
-    </Reference>
-    <Reference Include="i00SpellCheck, Version=1.0.0.40990, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\i00SpellCheck\i00SpellCheck.exe</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>lib\JSON.NET\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -499,6 +491,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\i00_SpellCheck_20140111\i00SpellCheck\i00SpellCheck.vbproj">
+      <Project>{27d0d9b3-719c-46b7-9f03-3f91e82e7436}</Project>
+      <Name>i00SpellCheck</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
