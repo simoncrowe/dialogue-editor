@@ -123,7 +123,8 @@
             this.orderByDropDownList.Items.AddRange(new object[] {
             "Node ID (Base 64)",
             "NPC Text (Alphabetical)",
-            "Number of Choices"});
+            "Number of Choices",
+            "Number of Null Choices"});
             this.orderByDropDownList.Location = new System.Drawing.Point(63, 3);
             this.orderByDropDownList.Name = "orderByDropDownList";
             this.orderByDropDownList.Size = new System.Drawing.Size(142, 21);

@@ -17,10 +17,11 @@ namespace DialogueEditor {
             listDropDownList.SelectedIndex = 0;
             orderByDropDownList.SelectedIndex = 0;
             numberOfNodesNumUpDown.Enabled = false;
-            comparers = new IComparer<Node>[3];
+            comparers = new IComparer<Node>[4];
             comparers[0] = new CompareNodesByID();
             comparers[1] = new CompareNodesByNPCText();
             comparers[2] = new CompareNodesByChoiceCount();
+            comparers[3] = new CompareNodesByNullChoiceCount();
         }
         public void UpdateNodesList() {
             List<Node> nodes = new List<Node>();
@@ -81,11 +82,25 @@ namespace DialogueEditor {
             if (n1 == null) {
                 if (n2 == null) return 0;
                 else return -1;
-}
+            }
             else {
                 if (n2 == null) return 1;
                 if (n1.Choices.Count < n2.Choices.Count) return 1;
                 else if (n1.Choices.Count == n2.Choices.Count) return 0;
+                else return -1;
+            }
+        }
+    }
+    public class CompareNodesByNullChoiceCount : IComparer<Node> {
+        public int Compare (Node n1, Node n2) {
+            if (n1 == null) {
+                if (n2 == null) return 0;
+                else return -1;
+            }
+            else {
+                if (n2 == null) return 1;
+                if (n1.NullChoiceCount() < n2.NullChoiceCount()) return 1;
+                else if (n1.NullChoiceCount() == n2.NullChoiceCount()) return 0;
                 else return -1;
             }
         }

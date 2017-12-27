@@ -73,5 +73,18 @@ namespace DialogueEditor {
                 return true;
             }
         }
+        /// <summary>
+        /// Determines how many null choices, those without a destination node id and/or player text
+        /// belong to this Node.
+        /// </summary>
+        public int NullChoiceCount() {
+            int nullChoiceCount = 0;
+            for (int i = 0; i < Choices.Count; i++) {
+                if (Choices[i].Player == string.Empty || Choices[i].Target == string.Empty) {
+                    nullChoiceCount ++;
+                }
+            }
+            return nullChoiceCount;
+        }
 	}
 }
